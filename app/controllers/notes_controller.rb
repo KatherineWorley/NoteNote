@@ -1,38 +1,38 @@
 class NotesController < ApplicationController
 	before_action :find_note, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!
 
 	def index
-		@notes = Note.all.order("created_at DESC")
+		@notes = Note.where(user_id: current_user)
 	end
 
 	def show
 	end
 
 	def new
-		@note = Note.new 
-	end 
+		@note = current_user.notes.build
+	end
 
 	def create
-		@note = Note.new(note_params)
+		@note = current_user.notes.build(note_params)
 
 		if @note.save
 			redirect_to @note
 		else
 			render 'new'
-		end 
-	end 
+		end
+	end
 
 	def edit
-
-	end 
+	end
 
 	def update
 		if @note.update(note_params)
 			redirect_to @note
 		else
 			render 'edit'
-		end 
-	end 
+		end
+	end
 
 	def destroy
 		@note.destroy
@@ -49,4 +49,3 @@ class NotesController < ApplicationController
 		params.require(:note).permit(:title, :content)
 	end
 end
-
