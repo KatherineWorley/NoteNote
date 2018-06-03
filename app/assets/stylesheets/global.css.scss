@@ -1,3 +1,19 @@
 $dark_gray: #2B2E2E;
 $light_gray: #C0C1C1;
 $green: #33CD99;
+
+@mixin bold_font {
+	font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	padding-top: 4.5rem;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
