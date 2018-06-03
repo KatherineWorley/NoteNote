@@ -17,3 +17,48 @@ body {
 	padding-top: 4.5rem;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.wrapper_with_padding {
+	width: 80%;
+	margin: 0 auto;
+	padding: 3.5rem 0;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+button, .button {
+	border: none;
+	outline: none;
+	background: $green;
+	padding: 1rem 3.5rem;
+	border-radius: 2rem;
+	a {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.button {
+	color: white;
+	margin: 2rem 0;
+}
+
+a {
+	color: $green;
+	text-decoration: none;
+	&:hover {
+		color: $dark_gray;
+	}
+}
