@@ -3,7 +3,6 @@
 		%h1.title= @note.title
 		%p= simple_format(@note.content)
 
-		= link_to "All Notes", notes_path
-
-		=link_to "Edit", edit_note_path(@note)
-		=link_to "Destroy", notes_path(@note), method: :destory, data: { confirm: "Are you sure?" }
+		=link_to "All Notes", notes_path, class: "button"
+		=link_to "Edit", edit_note_path(@note), class: "button"
+		=link_to "Delete", notes_path(@note), method: :destory, data: { confirm: "Are you sure?" }, class: "button"
