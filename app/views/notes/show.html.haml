@@ -1,7 +1,9 @@
-%h1= @note.title
-%p= @note.content
+.wrapper_with_padding
+	#note_show
+		%h1.title= @note.title
+		%p= simple_format(@note.content)
 
-= link_to "All Notes", notes_path
+		= link_to "All Notes", notes_path
 
-=link_to "Edit", edit_note_path(@note)
-=link_to "Destroy", notes_path(@note), method: :destory, data: { confirm: "Are you sure?" }
+		=link_to "Edit", edit_note_path(@note)
+		=link_to "Destroy", notes_path(@note), method: :destory, data: { confirm: "Are you sure?" }
